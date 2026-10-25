@@ -1,0 +1,30 @@
+services:
+  api-sensores:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: api_sensores_container
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./sensores.json:/app/sensores.json
+    networks:
+      - red-sensores
+
+  dashboard-sensores:
+    build:
+      context: .
+      dockerfile: Dockerfile.dashboard
+    container_name: dashboard_sensores_container
+    ports:
+      - "8050:8050"
+    environment:
+      - API_URL=http://api-sensores:5000/sensors/
+    depends_on:
+      - api-sensores
+    networks:
+      - red-sensores
+
+networks:
+  red-sensores:
+    driver: bridge

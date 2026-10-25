@@ -1,0 +1,14 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Copiar e instalar dependencias
+COPY requirements.txt .
+RUN pip install --no-cache-dir --prefer-binary -r requirements.txt
+
+# Copiar el código de la API y el archivo de datos JSON
+COPY API.py sensores.json ./
+
+EXPOSE 5000
+
+CMD ["python", "API.py"]
