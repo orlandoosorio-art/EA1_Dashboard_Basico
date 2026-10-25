@@ -1,0 +1,26 @@
+[
+  {
+    "sensor_id": 1,
+    "type": "temperatura",
+    "value": 25.5,
+    "timestamp": "2026-10-24T08:00:00"
+  },
+  {
+    "sensor_id": 1,
+    "type": "temperatura",
+    "value": 28.0,
+    "timestamp": "2026-10-24T10:00:00"
+  },
+  {
+    "sensor_id": 2,
+    "type": "presión",
+    "value": 101.3,
+    "timestamp": "2026-10-24T08:30:00"
+  },
+  {
+    "sensor_id": 3,
+    "type": "velocidad",
+    "value": 45.2,
+    "timestamp": "2026-10-24T09:00:00"
+  }
+]
